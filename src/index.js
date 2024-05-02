@@ -5,6 +5,7 @@ import firebaseApp from './firebase/config'
 import { FirebaseContext } from './store/FirebaseContext';
 import { AuthProvider } from './store/FirebaseContext';
 
+
 ReactDOM.render(
 <FirebaseContext.Provider value={firebaseApp}>
 <AuthProvider>

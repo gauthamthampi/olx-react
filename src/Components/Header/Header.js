@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useAuth } from '../../store/FirebaseContext';
 import {getAuth, signOut} from 'firebase/auth'
@@ -15,7 +15,7 @@ function Header() {
   const auth = getAuth(firebase)
   const user = useAuth();
   const history = useHistory()
-
+  
   const handleLogin = () => {
     if(!user){
       history.push("/login")
@@ -25,6 +25,10 @@ function Header() {
         history.push("/login")
       })
     }
+  }
+
+  const handleSell = () => {
+    history.push("/create")
   }
 
   return (
@@ -40,13 +44,16 @@ function Header() {
         </div>
         <div className="productSearch">
           <div className="input">
-            <input
-              type="text"
-              placeholder="Find car,mobile phone and more..."
-            />
+          <form >
+        <input
+          type="text"
+          placeholder="Search products..."
+        />
+      
+      </form>
           </div>
-          <div className="searchAction">
-            <Search color="#ffffff"></Search>
+          <div  className="searchAction">
+          <Search  color="#ffffff"></Search>
           </div>
         </div>
         <div className="language">
@@ -64,7 +71,7 @@ function Header() {
           onClick={handleLogin}>Login</button>}</span>
         </div>
        
-        <div className="sellMenu">
+        <div  onClick={handleSell} className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>

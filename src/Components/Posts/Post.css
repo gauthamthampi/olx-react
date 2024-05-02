@@ -39,6 +39,7 @@
   height: 270px;
   display: inline-block;
   cursor: pointer;
+  
 }
 
 .card .favorite {
@@ -72,9 +73,8 @@
   font-size: small;
 }
 .card .date {
-  display: flex;
-  justify-content: flex-end;
   font-size: small;
+  margin-bottom: 5px;
 }
 
 .recommendations {

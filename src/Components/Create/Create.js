@@ -52,7 +52,7 @@ const Create = () => {
       <Header />
       <card>
         <div className="centerDiv">
-         
+         <h3 style={{margin:"40px"}}>Sell your products</h3>
             <label htmlFor="fname">Name</label>
             <br />
             <input
